@@ -1,26 +1,20 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Spinner from "../assets/fa-spinner-solid.svg"
 
 function Header() {
   let navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [searchMovie, setSearchMovie] = useState();
+  const [searchMovie, setSearchMovie] = useState("");
 
   function onSearch() {
-    fetchMovie(searchMovie);
     setIsLoading(true);
-    navigate("/Movies");
-    console.log(searchMovie);
+    setTimeout(() => {
+      navigate(`/${searchMovie}`);
+      setIsLoading(false)
+    }, 1000);
   }
 
-  async function fetchMovie(movieName) {
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?i=tt3896198&apikey=acf6e413&s=${movieName}`
-    );
-    console.log(data);
-    setIsLoading(false);
-  }
   return (
     <section id="landing">
       <nav>
@@ -70,9 +64,9 @@ function Header() {
                     onClick={() => onSearch()}
                   >
                     {isLoading ? (
-                      <div className="searchIcon--skeleton">
-                        <i className="fas fa-spinner movies__loading--spinner"></i>
-                      </div>
+                      <figure className="spinner--wrapper">
+                        <img src={Spinner} alt="" className="fa-spinner" />
+                      </figure>
                     ) : (
                       <svg
                         className="searchIcon__img svg-inline--fa fa-search fa-w-16"

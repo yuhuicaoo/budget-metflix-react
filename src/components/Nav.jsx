@@ -6,7 +6,7 @@ function Nav() {
     <nav>
       <div className="logo">
         <h2 className="logo__name">
-          <Link to="/" className="white">
+          <Link to="/" className="logo__white">
             BUDGET <span className="red">METFLIX</span>
           </Link>
         </h2>

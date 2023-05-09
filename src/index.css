@@ -41,7 +41,7 @@ a {
 
 .background {
   background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/efb4855d-e702-43e5-9997-bba0154152e0/24b15e34-635d-4b67-abde-156041d6f80e/NZ-en-20230417-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -61,8 +61,12 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(15, 15, 15, 0.83);
   pointer-events: none;
+}
+
+.background:after, .movie__main.after {
+  content: "";
+  background-color: rgba(15,15,15,0.83);
 }
 
 .red {
@@ -119,6 +123,10 @@ nav {
 .logo {
   display: flex;
   align-items: center;
+}
+
+.logo__white {
+  color: white;
 }
 
 .logo__name {
@@ -345,6 +353,7 @@ select {
 }
 
 .movie__selected--top {
+  padding-left: 40px;
   display: flex;
   align-items: center;
 }
@@ -352,6 +361,7 @@ select {
 .fa-arrow-left {
   font-size: 30px;
 }
+
 
 .movie__link {
   color: #e50914;
@@ -504,6 +514,18 @@ select {
   .filler-prompt {
     font-size: 36px;
   }
+
+  .movie__selected--title {
+    font-size: 32px;
+  }
+
+  .movie__summary--para {
+    font-size: 14px;
+  }
+
+  .movie__selected--top {
+    justify-content: center;
+  }
 }
 
 /* SMALL PHONES */
@@ -551,5 +573,70 @@ select {
 
   .filler-prompt {
     font-size: 28px;
+  }
+
+  .movie__selected{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie__selected--figure {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .movie__selected--description{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .movie__selected--top {
+    padding: 24px 0 0
+  }
+
+  .movie__summary, .movie__extra--info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie__summary--title {
+    font-size: 24px;
+  }
+
+  .movie__summary--para, .movie__summary--languages {
+    padding: 0 70px;
+    text-align: center  ;
+  }
+
+  .movie__summary--genre {
+    margin-bottom: 40px;
+  }
+
+  .movie__body {
+    background-color: white;
+  }
+
+  .white {
+    color: #0a1f44;
+  }
+
+  .summary__para--loading, 
+  .summary__languages--loading {
+    width: 70%;
+  }
+
+  .movie__link {
+    color: #0a1f44;
+  }
+
+  .movie__link--hover:hover:after {
+    background-color: #0a1f44;
   }
 }

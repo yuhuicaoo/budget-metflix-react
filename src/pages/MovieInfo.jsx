@@ -25,7 +25,7 @@ function MovieInfo() {
   
   return (
     <div>
-      <Nav />
+      <Nav className="hi"/>
       <div className="movie__body">
         <main className="movie__main">
           <div className="movie__container">

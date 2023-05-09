@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Spinner from "../assets/fa-spinner-solid.svg"
+import Nav from "./Nav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header() {
   let navigate = useNavigate();
@@ -11,40 +12,13 @@ function Header() {
     setIsLoading(true);
     setTimeout(() => {
       navigate(`/${searchMovie}`);
-      setIsLoading(false)
+      setIsLoading(false);
     }, 1000);
   }
 
   return (
     <section id="landing">
-      <nav>
-        <div className="logo">
-          <h2 className="logo__name">
-            BUDGET <span className="red">METFLIX</span>
-          </h2>
-        </div>
-        <ul className="nav__links">
-          <li className="nav__link">
-            <a href="/" className="nav__link--anchor link__hover-effect">
-              Home
-            </a>
-          </li>
-          <li className="nav__link">
-            <a
-              href=""
-              className="nav__link--anchor link__hover-effect no-cursor"
-            >
-              Find your movie
-            </a>
-          </li>
-          <li className="nav__link">
-            <a href="" className="nav__link--anchor btn__contact">
-              Contact
-            </a>
-          </li>
-        </ul>
-        <div className="background"></div>
-      </nav>
+      <Nav />
       <header>
         <div className="container">
           <div className="row">
@@ -65,7 +39,7 @@ function Header() {
                   >
                     {isLoading ? (
                       <figure className="spinner--wrapper">
-                        <img src={Spinner} alt="" className="fa-spinner" />
+                        <FontAwesomeIcon icon="fa-spinner" />
                       </figure>
                     ) : (
                       <svg

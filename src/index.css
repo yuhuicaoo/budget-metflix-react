@@ -597,7 +597,12 @@ select {
   }
 
   .movie__selected--top {
-    padding: 24px 0 0
+    padding: 24px 0 0 0;
+  }
+
+  .movie__selected--title {
+    padding: 0 40px;
+    text-align: center;
   }
 
   .movie__summary, .movie__extra--info {

@@ -18,7 +18,6 @@ function Movies() {
   const [movies, setMovies] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [numMovies, setNumMovies] = useState(0);
 
   function filterMovies(filter) {
     if (filter === "NEW_TO_OLD") {
@@ -34,8 +33,8 @@ function Movies() {
         movieId || searchId
       }`
     );
-    setNumMovies(data.Search.length);
-    setMovies(data.Search);
+    const { Search } = data
+    setMovies(Search);
     setIsLoading(false);
   }
   
@@ -120,7 +119,7 @@ function Movies() {
 
               <div className="movies">
                 {isLoading
-                  ? new Array(numMovies).fill(0).map((_, index) => (
+                  ? new Array(8).fill(0).map((_, index) => (
                       <div className="movie" key={index}>
                         <div className="movie__img--skeleton"></div>
                         <div className="skeleton movie__title--skeleton"></div>

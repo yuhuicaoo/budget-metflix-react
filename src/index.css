@@ -75,6 +75,10 @@ a {
 
 /* NAVIGATION  */
 
+#landing {
+  height: 100vh;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -203,7 +207,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: end;
-  padding-top: 48px;
+  padding: 24px 0;
 }
 
 .home_image {
@@ -243,7 +247,6 @@ input {
 /* SEARCH  */
 
 #search {
-  height: 85vh;
   background: white;
 }
 

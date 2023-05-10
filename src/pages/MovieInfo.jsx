@@ -13,10 +13,8 @@ function MovieInfo() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=acf6e413&i=${movieID}`
     );
-    setTimeout(() => {
-      setMovie(data);
-      setIsloading(false);
-    }, 1000);
+    setMovie(data);
+    setIsloading(false);
   }
 
   useEffect(() => {
@@ -25,7 +23,7 @@ function MovieInfo() {
   
   return (
     <div>
-      <Nav className="hi"/>
+      <Nav className="nav"/>
       <div className="movie__body">
         <main className="movie__main">
           <div className="movie__container">
